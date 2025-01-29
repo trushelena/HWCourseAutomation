@@ -20,7 +20,7 @@ console.log("Converting string to number and adding:", Number(str1) + num1);
 
 // Operations with boolean values
 console.log("Addition of boolean values:", bool1 + bool2);
-console.log("Boolean value + number:", bool1 ** num1);
+console.log("Boolean value ** number:", bool1 ** num1);
 console.log("Boolean value + string:", bool1 + str2);
 
 // Mixed operations
