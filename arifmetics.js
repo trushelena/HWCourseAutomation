@@ -7,8 +7,8 @@ let bool1 = true;
 let bool2 = false;
 
 // Arithmetic operations with numbers
-console.log("Addition of numbers:", num1 + num2);
-console.log("Subtraction of numbers:", num1 - num2);
+console.log("Multiplication assignment operator:", num1 * num2);
+console.log("Prefix decrement :", --num1);
 console.log("Multiplication of numbers:", num1 * num2);
 console.log("Division of numbers:", num1 / num2);
 console.log("Remainder of division of numbers:", num1 % num2);
