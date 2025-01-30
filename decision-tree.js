@@ -1,16 +1,18 @@
-let experience = 7;
-let isQaAutomation = false;
-let isQaManual = true;
+import { isQaAutomation } from "./arifmetics";
+
+const experience = 7;
+const isQaManual = true;
 
 //using if else
 if (experience < 2) {
     console.log("You are junior");
 } else {
-    console.log("You are not 1junior :)");
+    console.log("You are middle or senior)");
 }
 
 console.log("---------------------");
 
+//using if else if
 if (experience >= 0 && experience <= 1) {
     console.log("You are Trainee");
 }else if (experience > 1 && experience <= 2) {
@@ -21,10 +23,11 @@ if (experience >= 0 && experience <= 1) {
     console.log("You are senior :)");
 }
 
+//Using logical operations
 if (isQaAutomation && experience < 1) {
     console.log("You have time to study QA Automation");
 } else if (isQaManual || isQaAutomation) {
     console.log("You are QA Automation or QA Manual");
 } else {
-    console.log("You are waiting too long to study QA Automation");
+    console.log("You should consider studying QA Automation");
 }

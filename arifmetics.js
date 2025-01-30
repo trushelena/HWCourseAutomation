@@ -1,10 +1,10 @@
 // Declaration of variables of different types
 let num1 = 10.5;
-let num2 = 5;
-let str1 = "20.5";
-let str2 = "Hello";
-let bool1 = true;
-let bool2 = false;
+const num2 = 5;
+const str1 = "20.5";
+const str2 = "Hello";
+const bool1 = true;
+const bool2 = false;
 
 // Arithmetic operations with numbers
 console.log("Multiplication assignment operator:", num1 * num2);
