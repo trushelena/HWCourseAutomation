@@ -1,4 +1,4 @@
-let experience = 5;
+const experience = 5;
 
 switch (experience) {
     case 1:
@@ -9,6 +9,9 @@ switch (experience) {
         break;
     case 3:
         console.log("You are Middle");
+        break;
+    case 4:
+        console.log("You are Strong Middle");
         break;
     case 5:
         console.log("You are Senior");
