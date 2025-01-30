@@ -1,14 +1,17 @@
 let experience = 5;
 
 switch (experience) {
-    case (experience = 1):
+    case 1:
         console.log("You are Junior");
         break;
-    case (experience = 3):
+    case 2:
+        console.log("You are Strong Junior");
+        break;
+    case 3:
         console.log("You are Middle");
         break;
-    case (experience = 5):
-        console.log("You are Middle");
+    case 5:
+        console.log("You are Senior");
         break;
     default:
         console.log("You are waiting for your offer");
