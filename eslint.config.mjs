@@ -41,6 +41,10 @@ export default [
             'no-trailing-spaces': ['error', { skipBlankLines: false }],
             'eol-last': ['error', 'always'],
             'no-var': ['error'],
+<<<<<<< HEAD
+=======
+            'prefer-const': 'error',
+>>>>>>> df4738d6133ff2cf67c79dfb0daf17f30d8ca788
             'unicorn/filename-case': [
                 'error',
                 {
