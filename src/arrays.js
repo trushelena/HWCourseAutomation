@@ -28,4 +28,5 @@ console.log(mixedArray.toString());
 // 5. flat + array
 console.log(boolArray.flat());
 // Copy to index 2 the element at index 3
-console.log(stringArray.copyWithin(2, 3, 4));
+console.log(stringArray.copyWithin(2, 3, 4))
+
