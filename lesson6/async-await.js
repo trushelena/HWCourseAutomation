@@ -24,6 +24,7 @@ async function fetchAndProcessUser() {
         const data = await fetchJson(url);
         processJson(data);
     } catch (error) {
-        console.error('Error fetching data:', error.message);}
+        console.error('Error fetching data:', error.message);
+    }
 }
 fetchAndProcessUser();

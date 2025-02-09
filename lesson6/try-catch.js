@@ -1,22 +1,43 @@
-const wrongUrl = 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_request';
-fetch(wrongUrl)
-    .then((response) => {
-        // Our handler throws an error if the request did not succeed.
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
+const url1 = 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch2';
+const url2 = 'https://randomuser.me/api/';
+
+async function fetchJson(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error(`HTTP error - Status: ${response.status}`);
+    }
+    return await response.json();
+};
+
+
+function processJson(data) {
+    const user = data.results[0];
+    console.log('Name:', `${user.name.first} ${user.name.last}`);
+    console.log('Gender:', user.gender);
+    console.log('Country:', user.location.country);
+    console.log('Email:', user.email);
+    console.log('Photo:', user.picture.large);
+}
+
+
+async function tryFetch() {
+    try {
+        console.log('Trying to fetch data from url1 (wrong url)...');
+        const data = await fetchJson(url1);
+        processJson(data);
+    } catch (error) {
+        console.error('Error fetching data from resource1:', error.message);
+
+        console.log('Trying to fetch data from the second URL (existing)...');
+        try {
+            const data = await fetchJson(url2);
+            processJson(data);
+        } catch (error) {
+            console.error('Error fetching data from resource2:', error.message);
+            throw new Error('Both resources are failed');
         }
-        // Otherwise (if the response succeeded), our handler fetches the response
-        // as text by calling response.text(), and immediately returns the promise
-        // returned by `response.text()`.
-        return response.text();
-    });
-// When response.text() has succeeded, the `then()` handler is called with
-    // the text, and we copy it into the `poemDisplay` box.
- // .then((text) => {
-     // poemDisplay.textContent = text;
-    //})
-    // Catch any errors that might happen, and display a message
-    // in the `poemDisplay` box.
-    //.catch((error) => {
-     // poemDisplay.textContent = `Could not fetch verse: ${error}`;
-    //});
+    }
+}
+tryFetch().catch(error => {
+    console.error('Custom Error:', error.message);
+});
