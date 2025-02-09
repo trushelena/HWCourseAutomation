@@ -20,13 +20,10 @@ function processJson(data) {
 
 
 async function fetchAndProcessUser() {
-
-    const data = await fetchJson(url)
-        .then(data => {
-           processJson(data);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error.message);
-        });
+    try {
+        const data = await fetchJson(url);
+        processJson(data);
+    } catch (error) {
+        console.error('Error fetching data:', error.message);}
 }
 fetchAndProcessUser();
