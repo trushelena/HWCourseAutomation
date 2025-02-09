@@ -27,7 +27,6 @@ async function tryFetch() {
         processJson(data);
     } catch (error) {
         console.error('Error fetching data from resource1:', error.message);
-
         console.log('Trying to fetch data from the second URL (existing)...');
         try {
             const data = await fetchJson(url2);
