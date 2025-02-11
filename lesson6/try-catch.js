@@ -1,5 +1,5 @@
 const url1 = 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch2';
-const url2 = 'https://randomuser.me/api/';
+const url2 = 'https://randomuser.me/api/3';
 
 async function fetchJson(url) {
     const response = await fetch(url);
@@ -37,6 +37,7 @@ async function tryFetch() {
         }
     }
 }
-tryFetch().catch(error => {
-    console.error('Custom Error:', error.message);
-});
+tryFetch();
+//.catch(error => {
+  //  console.error('Custom Error:', error.message);
+//});

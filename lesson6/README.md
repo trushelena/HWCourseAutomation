@@ -1,25 +1,19 @@
-# js-eslint-config
-recommended config from me for programming on a JavaScript
+Lesson 6 - try...catch, promises, async-await
+This lesson covers the following topics:
+Error Handling
+debugging
+Promises
+Promise API
+Promises coding approach
+async-await coding approach
+Race conditions
+How to Run the Code
+To run the code, follow these steps:
 
-In order to use this config you have to install the following NPM packages
-```
-npm init
-npm i -D @eslint/js eslint globals eslint-plugin-unicorn
-```
+Install the necessary dependencies:
 
-Then put eslint.config.mjs and .prettierrc into your base directory
+npm install
+Execute the JavaScript file:
 
-you can add a script to your package.json
-```
-"scripts": {
-  "lint": "eslint .",
-  "build": "npm run lint && <build script>",
-}
-```
-
-**Alternatively**, just copy the content of this folder into your project folder and run
-```
-npm i
-```
-
-and start coding
+node src/<filename>.js
+Replace <filename> with the name of the JavaScript file you want to run.
