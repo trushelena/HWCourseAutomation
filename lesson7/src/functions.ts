@@ -6,14 +6,14 @@ function sumArrayElements(arr: number[] | string[]): number {
     return sum;
 }
 
-const numberArray = [1, 2, 3, 4, 5];
-const stringArray = ['rjefnjne', '2', 'derdf', '5', 'ref'];
+export const numberArray = [1, 2, 3, 4, 5];
+const stringNumberArray = ['rjefnjne', '2', 'derdf', '5', 'ref'];
 
 function isValidNumber(num: number): boolean {
     return !Number.isNaN(num);
 }
 
-const convertedStringArray: number[] = stringArray
+const convertedStringArray: number[] = stringNumberArray
     .map(Number)
     .filter(isValidNumber);
 

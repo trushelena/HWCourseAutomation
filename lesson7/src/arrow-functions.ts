@@ -1,3 +1,5 @@
+import { numberArray } from './functions';
+
 const sumArrayElements = (arr: string[] | number[]): number => {
     return arr
         .map(item => typeof item === 'string' ? Number(item) : item)
@@ -5,7 +7,7 @@ const sumArrayElements = (arr: string[] | number[]): number => {
         .reduce((sum, current) => sum + current, 0);
 };
 
-const numberArray = [1, 2, 3, 4, 5];
+//const numberArray = [1, 2, 3, 4, 5];
 const stringArray = ['6', '7', '8', 'er', '0'];
 
 const convertedStringArray = stringArray.map(Number);
