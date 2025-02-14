@@ -17,8 +17,8 @@ const convertedStringArray: number[] = stringNumberArray
     .map(Number)
     .filter(isValidNumber);
 
-const sumNumbers: number = sumArrayElements(numberArray);
-const sumStrings: number = sumArrayElements(convertedStringArray);
+const sumNumbers = sumArrayElements(numberArray);
+const sumStrings = sumArrayElements(convertedStringArray);
 
 console.log('Sum of array numbers:', sumNumbers);
 console.log('Sum of string array:', sumStrings);
