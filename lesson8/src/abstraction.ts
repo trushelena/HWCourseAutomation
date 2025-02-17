@@ -19,7 +19,7 @@ abstract class BankAccount {
     }
 }
 
-class SavingsAccount extends BankAccount {
+export class SavingsAccount extends BankAccount {
     public constructor(owner: string, balance: number) {
         super(owner, balance);
     }
@@ -38,7 +38,7 @@ class SavingsAccount extends BankAccount {
     }
 }
 
-class DepositAccount extends BankAccount {
+export class DepositAccount extends BankAccount {
     private interestRate: number;
 
     public constructor(owner: string, balance: number, interestRate: number) {
@@ -57,9 +57,7 @@ class DepositAccount extends BankAccount {
     }
 
     public applyInterest(): number {
-        this.balance += (this.balance * this.interestRate) / 100; // Нарахування відсотків
+        this.balance += (this.balance * this.interestRate) / 100;
         return this.balance;
     }
 }
-
-export { SavingsAccount, DepositAccount };

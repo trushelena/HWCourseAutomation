@@ -91,33 +91,3 @@ export async function getJson(): Promise<Results> {
     const json = await response.json() as Results;
     return json;
 }
-
-export class UserSummary {
-    public fullName: string;
-    public nickname: string;
-    public location: string;
-    public birthDate: string;
-
-    public constructor(user: User) {
-        this.fullName = `${user.name.first} ${user.name.last}`;
-        this.nickname = user.email.split('@')[0];
-        this.location = `${user.location.city}, ${user.location.country}`;
-        this.birthDate = new Date(user.dob.date).toLocaleDateString('en-GB');
-    }
-
-    public getSummary(): string {
-        return `${this.fullName}\n Born on: ${this.birthDate}\n From: ${this.location}\n Username: ${this.nickname}`;
-    }
-}
-
-
-(async () => {
-    const data = await getJson();
-    console.log('Selected user:');
-    console.log(data.results[0]);
-
-    const userSummary = new UserSummary(data.results[0]);
-    console.log('User Summary:');
-    console.log(userSummary.getSummary());
-
-})();
