@@ -1,27 +1,19 @@
-# Lesson 7 - TS Basics
-
-## This lesson covers the following topics:
-
-1. **What is TypeScript**
-2. **How to add it to the nodejs project**
-3. **ESLint configuration**
-4. **Compilation using tsc**
-5. **Running ts using ts-node**
-6. **var and function typing**
-7. **some new types**
-
-## How to Run the Code
-
+Lesson 8 - TS Types. Interfaces. Classes
+This lesson covers the following topics:
+What is Type
+What is Interface
+Interface usage for typing
+What is class
+Class usage for typing
+Abstract Class
+Static classes and static class properties
+How to Run the Code
 To run the code, follow these steps:
 
-1. Install the necessary dependencies:
-    ```sh
-    npm install
-    ```
+Install the necessary dependencies:
 
-2. Execute the JavaScript file:
-    ```sh
-    npx ts-node src/<filename>.ts
-    ```
+npm install
+Execute the JavaScript file:
 
-Replace `<filename>` with the name of the JavaScript file you want to run.
+npx ts-node src/<filename>.ts
+Replace <filename> with the name of the JavaScript file you want to run.

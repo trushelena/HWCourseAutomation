@@ -57,7 +57,7 @@ class DepositAccount extends BankAccount {
     }
 
     public applyInterest(): number {
-        this.balance += this.balance * (this.interestRate / 100); // Нарахування відсотків
+        this.balance += (this.balance * this.interestRate) / 100; // Нарахування відсотків
         return this.balance;
     }
 }
