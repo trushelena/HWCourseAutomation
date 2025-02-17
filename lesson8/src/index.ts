@@ -1,5 +1,5 @@
 import { SavingsAccount, DepositAccount } from './abstraction';
-import { getJson } from './interface-classes';
+import { getJson } from './fetch-api';
 import { UserSummary } from './user-summary';
 
 const mySavings = new SavingsAccount('Olena Popova', 500);

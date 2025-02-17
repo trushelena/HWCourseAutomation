@@ -85,9 +85,3 @@ export interface User {
     picture: Picture;
     nat: string;
 }
-
-export async function getJson(): Promise<Results> {
-    const response = await fetch('https://randomuser.me/api/?results=1');
-    const json = await response.json() as Results;
-    return json;
-}
