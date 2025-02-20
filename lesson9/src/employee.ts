@@ -2,7 +2,7 @@ import { IEmployee } from './interface-employee';
 
 
 export class Employee implements IEmployee {
-    public constructor(public name: string, public position: string, public salary: number) {}
+    public constructor(public name: string, public position: string, protected salary: number) {}
 
     public work(): void {
         console.log(`${this.name} is working on general tasks.`);

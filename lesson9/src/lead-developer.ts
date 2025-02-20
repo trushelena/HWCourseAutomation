@@ -6,8 +6,8 @@ export class LeadDeveloper extends Developer {
         this.position = 'Lead Developer';
     }
 
-    public mentorJunior(dev: Developer): void {
-        console.log(`${this.name} is mentoring ${dev.name}.`);
+    public mentorDevs(dev: Developer): void {
+        console.log(`${this.name} is a Lead for ${dev.name}.`);
     }
 
     public designArchitecture(): void {

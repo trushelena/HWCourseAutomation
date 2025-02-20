@@ -1,5 +1,4 @@
-import { Employee } from "./employee";
-
+import { Employee } from './employee';
 
 
 export class Developer extends Employee {
@@ -17,14 +16,6 @@ export class Developer extends Employee {
 
     public reviewCode(colleague: string): void {
         console.log(`${this.name} is reviewing ${colleague}'s code.`);
-    }
-
-    public deployToProduction(): void {
-        console.log(`${this.name} deployed the latest code to production.`);
-    }
-
-    public attendStandup(): void {
-        console.log(`${this.name} is attending the daily standup meeting.`);
     }
 
     public learnNewTechnology(technology: string): void {
