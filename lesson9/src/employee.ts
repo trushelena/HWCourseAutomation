@@ -1,7 +1,4 @@
-import { IEmployee } from './interface-employee';
-
-
-export class Employee implements IEmployee {
+export class Employee{
     public constructor(public name: string, public position: string, protected salary: number) {}
 
     public work(): void {

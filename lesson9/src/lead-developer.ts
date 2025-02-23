@@ -1,13 +1,23 @@
 import { Developer } from './developer';
+import { Employee } from './employee';
+import { ILeader } from './ileader';
 
-export class LeadDeveloper extends Developer {
+export class LeadDeveloper extends Developer implements ILeader {
     public constructor(name: string, salary: number, mainLanguage: string) {
         super(name, salary, mainLanguage);
         this.position = 'Lead Developer';
     }
 
-    public mentorDevs(dev: Developer): void {
-        console.log(`${this.name} is a Lead for ${dev.name}.`);
+    public mentorEmployee(employee: Employee): void {
+        console.log(`${this.name} is mentoring ${employee.name}.`);
+    }
+
+    public manageTeam(): void {
+        console.log(`${this.name} is managing the development team.`);
+    }
+
+    public reportToManager(): void {
+        console.log(`${this.name} is reporting to the manager.`);
     }
 
     public designArchitecture(): void {
@@ -20,5 +30,9 @@ export class LeadDeveloper extends Developer {
 
     public planSprintTasks(): void {
         console.log(`${this.name} is planning sprint tasks.`);
+    }
+
+    public conductOneToOne(employee: Employee): void {
+        console.log(`${this.name} is having a one-to-one meeting with ${employee.name}.`);
     }
 }

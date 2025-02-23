@@ -1,12 +1,18 @@
 import { Developer } from './developer';
 import { LeadDeveloper } from './lead-developer';
-import { promoteEmployee } from './promote-employee';
+import { performLeaderDuties } from './performance-report';
 import { QaEngineer } from './qa-engineer';
+import { ProjectManager } from './project-manager';
+import { Employee } from './employee';
 
 const dev = new Developer('Maryna', 5000, 'TypeScript');
 const leadDev = new LeadDeveloper('Artur', 7000, 'Java');
+const pm = new ProjectManager('Anna', 8000);
 const qa = new QaEngineer ('Olena', 300);
-//dev work
+const employee = new Employee ('Vlad', 'QA', 500);
+
+console.log('------------------');
+console.log('Dev work:');
 dev.work();
 dev.writeCode('TypeScript');
 dev.fixBug(101);
@@ -16,13 +22,17 @@ dev.attendTraining('Advanced TypeScript');
 dev.requestVacation(5);
 dev.receiveSalary();
 dev.giveFeedback('Great team environment!');
-//lead work
+console.log('------------------');
+console.log('Lead dev work:');
 leadDev.work();
 leadDev.designArchitecture();
 leadDev.planSprintTasks();
-leadDev.mentorDevs(dev);
+leadDev.reportToManager();
+leadDev.conductOneToOne(employee);
+//leadDev.mentorDevs(dev);
 leadDev.reviewCode('Erika');
-//Qa work
+console.log('------------------');
+console.log('QA work:');
 qa.work();
 qa.writeTC('Regression Test Suite');
 qa.testFixedBug(101);
@@ -32,7 +42,14 @@ qa.requestVacation(5);
 qa.receiveSalary();
 qa.giveFeedback('Great work!');
 
-//promoting
-promoteEmployee(dev);
-promoteEmployee(leadDev);
-promoteEmployee(qa);
+console.log('------------------');
+console.log('Leads duties:');
+performLeaderDuties(pm);
+performLeaderDuties(leadDev);
+console.log('------------------');
+console.log('PM work:');
+pm.planSprints();
+pm.conductMeetings();
+pm.communicateWithStakeholders();
+pm.conductOneToOne(employee);
+pm.reportToManager();
