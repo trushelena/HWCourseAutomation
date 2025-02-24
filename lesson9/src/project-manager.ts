@@ -32,4 +32,7 @@ export class ProjectManager extends Employee implements ILeader {
     public conductOneToOne(employee: Employee): void {
         console.log(`${this.name} is having a 1-on-1 meeting with ${employee.name}.`);
     }
+    public evaluatePerformance(employee: Employee): void {
+        console.log(`${this.name} is evaluating the performance of ${employee.name}.`);
+    }
 }

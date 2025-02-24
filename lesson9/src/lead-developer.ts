@@ -35,4 +35,7 @@ export class LeadDeveloper extends Developer implements ILeader {
     public conductOneToOne(employee: Employee): void {
         console.log(`${this.name} is having a one-to-one meeting with ${employee.name}.`);
     }
+    public evaluatePerformance(employee: Employee): void {
+        console.log(`${this.name} is evaluating the performance ${employee.name}.`);
+    }
 }
