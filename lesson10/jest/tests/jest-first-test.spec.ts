@@ -13,12 +13,12 @@ describe('LeadDeveloper', () => {
         pm = new ProjectManager('Alina', 5430);
     });
 
-    it('should evaluate performance correctly with Lead Dev position', () => {
+    test('should evaluate performance correctly with Lead Dev position', () => {
         expect(leadDev.performLeaderDuties(employee)).toBe(
             'Artur is evaluating the performance Vlad.'
         );
     });   
-    it('should evaluate performance correctly with PM position', () => {
+    test('should evaluate performance correctly with PM position', () => {
             expect(pm.performLeaderDuties(employee)).toBe(
                 'Alina is evaluating the performance Vlad.'
         );
