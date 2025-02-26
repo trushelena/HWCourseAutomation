@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "@types/expect": "^1.20.4",
-    "chai": "^5.2.0",
-    "mocha": "^11.1.0",
-    "ts-mocha": "^11.1.0"
-  }
-}
