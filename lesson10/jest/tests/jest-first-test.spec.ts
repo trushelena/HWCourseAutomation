@@ -7,20 +7,21 @@ describe('LeadDeveloper', () => {
     let employee: Employee;
     let pm: ProjectManager;
 
-    beforeEach(() => {
-        leadDev = new LeadDeveloper('Artur', 80000, 'TypeScript');
-        employee = new Employee('Vlad', 'QA', 50000);
-        pm = new ProjectManager('Alina', 5430);
-    });
-
     test('should evaluate performance correctly with Lead Dev position', () => {
-        expect(leadDev.performLeaderDuties(employee)).toBe(
-            'Artur is evaluating the performance Vlad.'
-        );
+        const leadDev = new LeadDeveloper('Artur', 80000, 'TypeScript');
+        const employee = new Employee('Vlad', 'QA', 50000);
+
+        const result = leadDev.performLeaderDuties(employee);
+
+        expect(result).toBe('Artur is evaluating the performance Vlad.');
     });   
     test('should evaluate performance correctly with PM position', () => {
-            expect(pm.performLeaderDuties(employee)).toBe(
-                'Alina is evaluating the performance Vlad.'
+        const employee = new Employee('Vlad', 'QA', 50000);
+        const pm = new ProjectManager('Alina', 50000);
+
+        const result = pm.performLeaderDuties(employee);
+        
+        expect(result).toBe('Alina is evaluating the performance Vlad.'
         );
     });
 });
