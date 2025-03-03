@@ -12,7 +12,12 @@
     "@eslint/js": "^9.19.0",
     "eslint": "^9.19.0",
     "eslint-plugin-unicorn": "^56.0.1",
-    "globals": "^15.14.0"
+    "globals": "^15.14.0",
+    "sinon": "^19.0.2",
+    "ts": "^0.0.0",
+    "ts-sinon": "^2.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^1.8.1"
+  }
 }
