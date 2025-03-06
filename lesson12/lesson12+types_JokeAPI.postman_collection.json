@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "d44a9dbc-5612-42c7-a5f4-15042007ae89",
+		"name": "JokeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3822151"
+	},
+	"item": [
+		{
+			"name": "/random",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Removed unnecessary .map() call",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response has the required fields - type, setup, punchline, and id\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.type).to.exist;",
+							"    pm.expect(responseData.setup).to.exist;",
+							"    pm.expect(responseData.punchline).to.exist;",
+							"    pm.expect(responseData.id).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Type, setup, and punchline are non-empty strings\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.type).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+							"  pm.expect(responseData.setup).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+							"  pm.expect(responseData.punchline).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"ID is a non-negative integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.id).to.be.a('number');",
+							"    pm.expect(responseData.id).to.be.at.least(0);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response time is less than 600ms\", function () {",
+							"  pm.expect(pm.response.responseTime).to.be.below(600);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is present and has the value 'application/json'\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.exist;",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"",
+							"pm.test(\"Response has a specific value for 'type'\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.type).to.exist.and.to.be.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has a specific value for 'setup'\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.setup).to.exist.and.to.be.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has a specific value for punchline\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.punchline).to.exist.and.to.be.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has a specific value for id\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.id).to.exist;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{JokeApiBaseApi}}/random",
+					"host": [
+						"{{JokeApiBaseApi}}"
+					],
+					"path": [
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/jokes/ten",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains type, setup and punchline attributes for the first random joke\", function () {",
+							"    let json = pm.response.json();",
+							"    pm.expect(json[0]).to.have.property(\"type\");",
+							"    pm.expect(json[0]).to.have.property(\"setup\");",
+							"    pm.expect(json[0]).to.have.property(\"punchline\");",
+							"    pm.expect(json[0]).to.have.property(\"id\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response contains 10 jokes\", function () {",
+							"    let json = pm.response.json();",
+							"    pm.expect(json).to.be.an(\"array\").with.lenthOf(10);",
+							"",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{JokeApiBaseApi}}/jokes/ten",
+					"host": [
+						"{{JokeApiBaseApi}}"
+					],
+					"path": [
+						"jokes",
+						"ten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/ types",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Valid joke types\", function () {",
+							"    let expectedTypes = [\"general\", \"knock-knock\", \"programming\", \"dad\"];",
+							"    let responseBody = pm.response.json();",
+							"    pm.expect(responseBody).to.eql(expectedTypes);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response body has correct number of types\", function () {",
+							"    let expectedCount = 4; ",
+							"    let responseBody = pm.response.json();",
+							"    pm.expect(responseBody.length).to.eql(expectedCount);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{JokeApiBaseApi}}/types",
+					"host": [
+						"{{JokeApiBaseApi}}"
+					],
+					"path": [
+						"types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "negative test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "JokeApiBaseApi",
+			"value": "localhost:3005",
+			"type": "string"
+		}
+	]
+}
