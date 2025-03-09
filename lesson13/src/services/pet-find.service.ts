@@ -9,7 +9,7 @@ export class PetStoreService {
             headers: { Accept: 'application/json' },
             method: 'GET',
             url: 'v2/pet/findByStatus',
-            params: { status } // status is a comma-separated string of statuses
+            params: { status }
         });
     };
 }
