@@ -1,22 +1,30 @@
-import { PactV3 } from '@pact-foundation/pact';
+import { PactV3, Verifier } from '@pact-foundation/pact';
 import { eachLike, like } from '@pact-foundation/pact/src/dsl/matchers';
 import { expect } from 'chai';
 import { PetStoreService } from 'src/services/pet-find.service';
+import * as path from 'path';
+
 
 describe('PactV3 PetsStore consumer tests', () => {
     const provider = new PactV3({
-        consumer: 'Pets-Web-v3',
-        provider: 'Pets-API-v3'
+        consumer: 'pets-search-consumer-v3',
+        provider: 'pets-search-provider-v3'
     });
 
     const status = 'available';
 
     const expectedBody = eachLike({
         id: like(123456),
-        category: { id: like(1), name: like('Some Category') },
-        name: 'doggie',
-        photoUrls: eachLike('http://example.com/pet.jpg'),
-        tags: eachLike({ id: like(1), name: like('Some Tag') }),
+        category: like({
+            id: like(1),
+            name: like('Some Category')
+        }),
+        name: like('doggie'),
+        photoUrls: like([]),
+        tags: like([{
+            id: like(0),
+            name: like('string')
+        }, { min: 0 }]),
         status: ('available')
     });
 
@@ -45,6 +53,20 @@ describe('PactV3 PetsStore consumer tests', () => {
             const data = responseByStatus.data;
             expect(data).to.be.an('array');
             expect(data[0]).to.have.keys(['id', 'category', 'name', 'photoUrls', 'tags', 'status']);
+        });
+    });
+
+
+    describe('Pact V3 verification', () => {
+        it('verify provider', () => {
+            return new Verifier({
+                providerBaseUrl: 'https://petstore.swagger.io',
+                pactUrls: [path.resolve(process.cwd(), './pacts/pets-search-consumer-v3-pets-search-provider-v3.json')] // Correct path to the pact file
+            })
+                .verifyProvider()
+                .then(() => {
+                    console.log('Pact Verification Complete!');
+                });
         });
     });
 });

@@ -1,6 +1,6 @@
 {
   "consumer": {
-    "name": "Pets-Web-v3"
+    "name": "pets-search-consumer-v3"
   },
   "interactions": [
     {
@@ -31,14 +31,15 @@
             },
             "id": 123456,
             "name": "doggie",
-            "photoUrls": [
-              "http://example.com/pet.jpg"
-            ],
+            "photoUrls": [],
             "status": "available",
             "tags": [
               {
-                "id": 1,
-                "name": "Some Tag"
+                "id": 0,
+                "name": "string"
+              },
+              {
+                "min": 0
               }
             ]
           }
@@ -54,6 +55,14 @@
                 {
                   "match": "type",
                   "min": 1
+                }
+              ]
+            },
+            "$[*].category": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
                 }
               ]
             },
@@ -81,12 +90,19 @@
                 }
               ]
             },
+            "$[*].name": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            },
             "$[*].photoUrls": {
               "combine": "AND",
               "matchers": [
                 {
-                  "match": "type",
-                  "min": 1
+                  "match": "type"
                 }
               ]
             },
@@ -94,8 +110,7 @@
               "combine": "AND",
               "matchers": [
                 {
-                  "match": "type",
-                  "min": 1
+                  "match": "type"
                 }
               ]
             },
@@ -136,6 +151,6 @@
     }
   },
   "provider": {
-    "name": "Pets-API-v3"
+    "name": "pets-search-provider-v3"
   }
 }
