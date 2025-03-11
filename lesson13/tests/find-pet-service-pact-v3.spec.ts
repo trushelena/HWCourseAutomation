@@ -1,9 +1,7 @@
-import { PactV3, Verifier } from '@pact-foundation/pact';
-import { eachLike, like } from '@pact-foundation/pact/src/dsl/matchers';
+import { MatchersV3, PactV3, Verifier } from '@pact-foundation/pact';
 import { expect } from 'chai';
 import { PetStoreService } from 'src/services/pet-find.service';
 import * as path from 'path';
-
 
 describe('PactV3 PetsStore consumer tests', () => {
     const provider = new PactV3({
@@ -13,19 +11,19 @@ describe('PactV3 PetsStore consumer tests', () => {
 
     const status = 'available';
 
-    const expectedBody = eachLike({
-        id: like(123456),
-        category: like({
-            id: like(1),
-            name: like('Some Category')
+    const expectedBody = MatchersV3.eachLike({
+        id: MatchersV3.like(123456),
+        name: MatchersV3.like('doggie'),
+        photoUrls: MatchersV3.eachLike('https://example.com/photo.jpg'),
+        tags: MatchersV3.eachLike({
+            id: MatchersV3.like(0),
+            name: MatchersV3.like('string')
         }),
-        name: like('doggie'),
-        photoUrls: like([]),
-        tags: like([{
-            id: like(0),
-            name: like('string')
-        }, { min: 0 }]),
-        status: ('available')
+        status: MatchersV3.like('available'),
+        category: MatchersV3.like({
+            id: MatchersV3.like(1),
+            name: MatchersV3.like('Some Category')
+        })
     });
 
     provider
@@ -52,7 +50,7 @@ describe('PactV3 PetsStore consumer tests', () => {
 
             const data = responseByStatus.data;
             expect(data).to.be.an('array');
-            expect(data[0]).to.have.keys(['id', 'category', 'name', 'photoUrls', 'tags', 'status']);
+            expect(data[0]).to.have.keys(['id', 'name', 'photoUrls', 'tags', 'status', 'category']);
         });
     });
 

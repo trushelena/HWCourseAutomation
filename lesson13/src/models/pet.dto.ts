@@ -20,19 +20,27 @@ export class Tag {
 
 export class PetDto {
     public id: number;
-    public category: Category;
+    public category?: Category; // ❗ category тепер необов'язкова
     public name: string;
     public photoUrls: string[];
     public tags: Tag[];
     public status: string;
 
-    public constructor(id: number, category: Category, name: string, photoUrls: string[], tags: Tag[], status: string) {
+    public constructor(
+        id: number,
+        name: string,
+        photoUrls: string[],
+        tags: Tag[],
+        status: string,
+        category?: Category
+    ) {
         this.id = id;
-        this.category = category;
         this.name = name;
         this.photoUrls = photoUrls;
         this.tags = tags;
         this.status = status;
+        if (category) {
+            this.category = category;
+        }
     }
 }
-

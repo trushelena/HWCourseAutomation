@@ -31,15 +31,14 @@
             },
             "id": 123456,
             "name": "doggie",
-            "photoUrls": [],
+            "photoUrls": [
+              "https://example.com/photo.jpg"
+            ],
             "status": "available",
             "tags": [
               {
                 "id": 0,
                 "name": "string"
-              },
-              {
-                "min": 0
               }
             ]
           }
@@ -102,6 +101,15 @@
               "combine": "AND",
               "matchers": [
                 {
+                  "match": "type",
+                  "min": 1
+                }
+              ]
+            },
+            "$[*].status": {
+              "combine": "AND",
+              "matchers": [
+                {
                   "match": "type"
                 }
               ]
@@ -110,7 +118,8 @@
               "combine": "AND",
               "matchers": [
                 {
-                  "match": "type"
+                  "match": "type",
+                  "min": 1
                 }
               ]
             },
