@@ -12,18 +12,18 @@ describe('PactV3 PetsStore consumer tests', () => {
     const status = 'available';
 
     const expectedBody = MatchersV3.eachLike({
-        id: MatchersV3.like(123456),
-        name: MatchersV3.like('doggie'),
-        photoUrls: MatchersV3.eachLike('https://example.com/photo.jpg'),
-        tags: MatchersV3.eachLike({
-            id: MatchersV3.like(0),
-            name: MatchersV3.like('string')
-        }),
-        status: MatchersV3.like('available'),
+        id: MatchersV3.like(1001),
         category: MatchersV3.like({
-            id: MatchersV3.like(1),
-            name: MatchersV3.like('Some Category')
-        })
+            id: MatchersV3.like(1001),
+            name: MatchersV3.like('dog')
+        }),
+        name: MatchersV3.like('freddie'),
+        photoUrls: MatchersV3.eachLike('string'),
+        tags: MatchersV3.eachLike({
+            id: MatchersV3.like(1001),
+            name: MatchersV3.like('my freddie')
+        }),
+        status: MatchersV3.like('available')
     });
 
     provider
@@ -50,7 +50,8 @@ describe('PactV3 PetsStore consumer tests', () => {
 
             const data = responseByStatus.data;
             expect(data).to.be.an('array');
-            expect(data[0]).to.have.keys(['id', 'name', 'photoUrls', 'tags', 'status', 'category']);
+            expect(data[0]).to.have.keys(['id', 'photoUrls', 'tags', 'status', 'category']);
+
         });
     });
 
