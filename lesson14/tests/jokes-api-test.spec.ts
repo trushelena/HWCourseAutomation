@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { JokesApiService } from 'src/services/jokes-api.service';
+import { JokesApiService } from 'src/services/jokes-types-api.service';
+
 
 describe('random jokes API Service tests', function () {
     let jokesApiService: JokesApiService;
