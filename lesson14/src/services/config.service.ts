@@ -1,10 +1,7 @@
-import * as dotenv from 'dotenv-safe';
-dotenv.config();
-
 export class ConfigService {
     private apiKey: string;
 
-    public constructor() {
+    constructor() {
         this.apiKey = process.env.JOKE_API_KEY || '';
     }
 

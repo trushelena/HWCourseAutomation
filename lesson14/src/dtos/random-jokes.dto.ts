@@ -4,3 +4,8 @@ export interface JokeDto {
     setup: string;
     punchline: string;
 }
+
+export interface JokeApiResponse {
+    status: number;
+    joke: JokeDto; 
+}
