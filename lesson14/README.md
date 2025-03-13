@@ -3,7 +3,10 @@ During this workshop we tried to create API testing framework base that is based
 
 **Example contains:**
 
-1. api-key auth example with Random Joke API
+1. joke.dto
+2. config.dto
+3. randomjoke and joketype in JokesApiObject
+4. test
 
 **Run**
 
