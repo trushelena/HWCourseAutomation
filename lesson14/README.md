@@ -1,12 +1,12 @@
 # Lesson 14 Api Test Automation Framework
-During this workshop we tried to create API testing framework base that is based on Vitest
+During this workshop we tried to create API testing framework base that is based on Mocha
 
 **Example contains:**
 
-1. joke.dto
-2. config.dto
-3. randomjoke and joketype in JokesApiObject
-4. test
+joke.dto – Data transfer object for joke responses
+config.dto – Configuration settings
+JokesApiObject – Includes randomJoke and jokeType
+Tests – API test cases
 
 **Run**
 
