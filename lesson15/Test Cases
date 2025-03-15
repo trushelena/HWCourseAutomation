@@ -2,24 +2,24 @@ Test Case1: Verify Search functionality
 
 Steps:
 1. Open link https://www.youtube.com/
-2. Click on #search-button-narrow.ytd-masthead
+2. Click on .ytSearchboxComponentInputBox
 3. Enter 'Css selectors' in .ytSearchboxComponentInputBox
-4.Click Search .ytSearchboxComponentSearchButton  -> Content is shown yt-showing-results-for-renderer
-5. Click on .yt-spec-touch-feedback-shape__fill ->  Input field is empty in .ytSearchboxComponentInputBox text Css selectors
+4. Click Search .ytSearchboxComponentSearchButton  -> Label 'About these results' is shown #about-these-results
+5. Click on .ytSearchboxComponentClearButtonWrapper -> Input field is empty in .ytSearchboxComponentInputBox text Css selectors
 
 
 Test Case2: Go from youtube.com to https://music.youtube.com/
 
 Steps:
 1.  Click on #guide-button.ytd-masthead
-2.  Click on Home button ‘//tp-yt-paper-item[1]’ -> https://www.youtube.com/ home page is opened
-3. Click on Youtube Music //yt-formatted-string[contains(text(), 'YouTube Music')] -> https://music.youtube.com/ is opened
+2.  Click on Home button //*[contains(@class, 'ytd-guide-entry-renderer') and @title='Home']-> https://www.youtube.com/ home page is opened
+3. Click on Youtube Music (//yt-formatted-string[contains(text(), 'YouTube Music')][contains(@class, 'ytd-guide-entry-renderer')])[1] -> https://music.youtube.com/ is opened
 
 
 Test Case3: Add new Playlist on https://music.youtube.com/
 
 1. Open https://music.youtube.com/
-2.  Click on new playlist //*[@id="buttons"]/yt-button-renderer/yt-button-shape[1] ->  Popup is shown .ytmusic-dialog
-3. Enter ‘Test title’ to //tp-yt-paper-input[@id='title-input']
+2.  Click on new playlist (//*[@id="buttons"]/yt-button-renderer/yt-button-shape)[1] ->  Popup is shown #content.ytmusic-dialog
+3. Enter ‘test’ to //tp-yt-paper-input[@id='title-input']
 4. Enter ‘Test describtion' to  //tp-yt-paper-textarea[contains(@class, 'description-input')]
-5.Click on yt-button-renderer:nth-child(4) -> New playlist is shown ytmusic-guide-entry-renderer:nth-child(2)
+5.Click on yt-button-renderer:nth-child(4) -> New playlist is shown (//yt-formatted-string[text()='test'])[1]
