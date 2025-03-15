@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7921a129-a49e-4b00-aeb0-a286cb31fbfc",
+		"_postman_id": "15aa6468-1def-45a4-a9d9-17be0d68180f",
 		"name": "TheCatsAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "3822151"
@@ -298,43 +298,21 @@
 							"\r",
 							"    const responseJson = pm.response.json();\r",
 							"    const selectedItem = responseJson.find(item => item.sub_id === pm.collectionVariables.get(\"subId\"));\r",
+							"    const imageId = selectedItem.image.id;\r",
 							"\r",
-							"    console.log(selectedItem);\r",
-							"\r",
-							"    if (selectedItem && selectedItem.image) {\r",
-							"        const imageId = selectedItem.image.id;\r",
-							"        console.log(imageId);\r",
-							"\r",
-							"        pm.expect(imageId).to.include(pm.collectionVariables.get(\"theCatPicId\"));\r",
-							"    } else {\r",
-							"        console.log(\"No image found for the selected item\");\r",
-							"    }\r",
+							"    pm.expect(imageId).to.include(pm.collectionVariables.get(\"theCatPicId\"));\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Image URLs from votes and /images API match\", function () {\r",
 							"    const responseJson = pm.response.json();\r",
 							"    const selectedItem = responseJson.find(item => item.sub_id === pm.collectionVariables.get(\"subId\"));\r",
 							"\r",
-							"    if (selectedItem && selectedItem.image) {\r",
-							"        pm.expect(selectedItem).to.have.property('image');\r",
-							"        pm.expect(selectedItem.image).to.have.property('url');\r",
+							"    pm.expect(selectedItem.image).to.have.property('url');\r",
 							"\r",
-							"        pm.sendRequest({\r",
-							"            url: `{{theCatsApiBaseUrl}}/${srelectedItem.image.id}.jpg`,\r",
-							"            method: 'GET'\r",
-							"        }, function (err, res) {\r",
-							"            if (err) {\r",
-							"                console.log(\"Error fetching image:\", err);\r",
-							"            } else {\r",
-							"                const imageUrlFromApi = res.url;\r",
-							"                pm.expect(selectedItem.image.url).to.eql(imageUrlFromApi);\r",
-							"            }\r",
-							"        });\r",
-							"    } else {\r",
-							"        console.log(\"No image found for the selected item\");\r",
-							"    }\r",
-							"});\r",
-							""
+							"    const savedImageUrl = pm.collectionVariables.get(\"savedImageUrl\");\r",
+							"    \r",
+							"    pm.expect(selectedItem.image.url).to.eql(savedImageUrl, 'The image URLs should match');\r",
+							"});"
 						],
 						"type": "text/javascript",
 						"packages": {}
@@ -449,7 +427,7 @@
 		},
 		{
 			"key": "theCatPicId",
-			"value": "e91-WySvE",
+			"value": "bkDYBWtlj",
 			"type": "string"
 		},
 		{
@@ -459,13 +437,12 @@
 		},
 		{
 			"key": "subId",
-			"value": "99"
+			"value": "popova"
 		},
 		{
-			"key": "imageId",
-			"value": "",
-			"type": "string",
-			"disabled": true
+			"key": "savedImageUrl",
+			"value": "https://cdn2.thecatapi.com/images/bkDYBWtlj.jpg",
+			"type": "string"
 		}
 	]
 }
