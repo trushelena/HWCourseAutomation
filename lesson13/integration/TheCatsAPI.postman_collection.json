@@ -251,12 +251,7 @@
 							"\r",
 							"    const resp = pm.response.json()\r",
 							"        .filter(x => x.sub_id === pm.collectionVariables.get(\"subId\"));\r",
-							"\r",
-							"    console.log(resp);\r",
-							"\r",
-							"    const result = resp.map(item => item.image_id);\r",
-							"    console.log(result);\r",
-							"    \r",
+							"    const result = resp.map(item => item.image.id);\r",
 							"    pm.expect(result).to.include(pm.collectionVariables.get(\"theCatPicId\"));\r",
 							"});"
 						],
