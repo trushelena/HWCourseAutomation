@@ -1,0 +1,24 @@
+Test Case1: Verify Search functionality
+
+Steps:
+1. Open link https://www.youtube.com/?hl=en
+2. Enter 'Css selectors' in [name="search_query"]
+4. Click Search .ytSearchboxComponentSearchButton  -> Label 'About these results' is shown #about-these-results
+5. Click on .ytSearchboxComponentClearButton -> Input field is empty in [name="search_query"] text Css selectors
+
+
+Test Case2: Go from youtube.com to https://music.youtube.com/
+
+Steps:
+1.  Click on #guide-button.ytd-masthead
+2.  Click on Home (//*[@id="endpoint"]/tp-yt-paper-item)[1] -> https://www.youtube.com/ home page is opened
+3. Click on Youtube Music (//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string)[15] -> https://music.youtube.com/ is opened
+
+
+Test Case3: Play all songs on https://music.youtube.com/
+
+1. Open https://music.youtube.com/?hl=en -> (//*[@id="content-group"])[1] is shown
+2.  Click on //*[@id="items"]/ytmusic-responsive-list-item-renderer[1]->  Player page is shown #player-page
+3. Click on Lyrics tab //*[@id="tabsContent"]/tp-yt-paper-tab[2] -> Lyrics tab is opened //*[@id="tabsContent"]/tp-yt-paper-tab[2][@aria-selected="true"]
+4. Click on Relates //*[@id="tabsContent"]/tp-yt-paper-tab[3] -> Relates is opened //*[@id="tabsContent"]/tp-yt-paper-tab[3][@aria-selected="true"]
+
