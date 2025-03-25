@@ -7,10 +7,9 @@ describe('YouTube Tests', () => {
     });
 
     it('should navigate from YouTube to YouTube Music', async () => {
-        await YouTubePage.open();
+        await YouTubePage.acceptPolicy();
         await YouTubePage.navigateToYouTubeMusic();
 
-        // Перевіряємо URL нової вкладки
         const currentUrl = await browser.getUrl();
         expect(currentUrl).toContain('music.youtube.com');
     });

@@ -48,8 +48,6 @@ class YouTubePage {
 
     public async navigateToYouTubeMusic(): Promise<void> {
 
-        await this.acceptPolicy();
-
         await this.guideButton.waitForClickable({ timeout: 5000 });
         await this.guideButton.click();
 
