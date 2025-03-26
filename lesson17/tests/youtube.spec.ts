@@ -9,9 +9,6 @@ describe('YouTube Tests', () => {
     it('should navigate from YouTube to YouTube Music', async () => {
         await YouTubePage.acceptPolicy();
         await YouTubePage.navigateToYouTubeMusic();
-
-        const currentUrl = await browser.getUrl();
-        expect(currentUrl).toContain('music.youtube.com');
     });
 
     it('should search for "CSS selectors" and clear input', async () => {

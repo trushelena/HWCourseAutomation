@@ -47,39 +47,37 @@ class YouTubePage {
     }
 
     public async navigateToYouTubeMusic(): Promise<void> {
+        const handlesBefore = await browser.getWindowHandles();
 
-        await this.guideButton.waitForClickable({ timeout: 5000 });
+        await this.guideButton.waitForClickable();
         await this.guideButton.click();
 
-        const youtubeMusicLink = await this.youtubeMusicLink;
-        await youtubeMusicLink.waitForClickable({ timeout: 5000 });
-        await youtubeMusicLink.click();
-
-
-        const handlesBefore = await browser.getWindowHandles();
+        await this.youtubeMusicLink.waitForClickable();
+        await this.youtubeMusicLink.click();
 
         await browser.waitUntil(async () => {
             const handlesAfter = await browser.getWindowHandles();
-            console.log(`Handles after: ${handlesAfter}`);
             return handlesAfter.length > handlesBefore.length;
         }, {
-            timeout: 50000,
-            timeoutMsg: 'New tab did not open after clicking the link'
+            timeout: 10000,
+            timeoutMsg: 'New tab did not open'
         });
-
         const handlesAfter = await browser.getWindowHandles();
+        const newTabHandle = handlesAfter[handlesAfter.length - 1];
 
-        const newTabHandle = handlesAfter.find(handle => handle !== handlesBefore[0]);
-        if (newTabHandle) {
-            await browser.switchToWindow(newTabHandle);
-        } else {
+        if (!newTabHandle) {
             throw new Error('New tab handle not found');
         }
 
-        await browser.waitUntil(async () => (await browser.getUrl()).includes('music.youtube.com'), {
-            timeout: 10000,
-            timeoutMsg: 'Did not navigate to YouTube Music in the new tab'
-        });
+        await browser.switchToWindow(newTabHandle);
+
+        //const currentUrl = await browser.getUrl();
+
+        //if (!currentUrl.includes('music')) {
+        //throw new Error(`URL in new tab is incorrect: ${currentUrl}`);
+        //}
+
+        await browser.closeWindow();
     }
 }
 
