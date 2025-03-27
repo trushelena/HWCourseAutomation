@@ -70,14 +70,6 @@ class YouTubePage {
         }
 
         await browser.switchToWindow(newTabHandle);
-
-        //const currentUrl = await browser.getUrl();
-
-        //if (!currentUrl.includes('music')) {
-        //throw new Error(`URL in new tab is incorrect: ${currentUrl}`);
-        //}
-
-        await browser.closeWindow();
     }
 }
 
