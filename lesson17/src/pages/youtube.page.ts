@@ -28,6 +28,10 @@ class YouTubePage {
         return $('//yt-formatted-string[contains(text(), "YouTube Music")]');
     }
 
+    public get youtubeMusicLogo(): ChainablePromiseElement {
+        return $('//*[@id="left-content"]/ytmusic-logo/a');
+    }
+
     public async open(): Promise<void> {
         await browser.url(this.url);
     }
@@ -70,6 +74,10 @@ class YouTubePage {
         }
 
         await browser.switchToWindow(newTabHandle);
+    }
+    public async isYouTubeMusicLogoDisplayed(): Promise<boolean> {
+        await this.youtubeMusicLogo.waitForDisplayed({ timeout: 5000 });
+        return this.youtubeMusicLogo.isDisplayed();
     }
 }
 

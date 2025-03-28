@@ -1,4 +1,4 @@
-import { browser, expect } from '@wdio/globals';
+import { expect } from '@wdio/globals';
 import YouTubePage from 'src/pages/youtube.page';
 
 describe('YouTube Tests', () => {
@@ -10,8 +10,7 @@ describe('YouTube Tests', () => {
         await YouTubePage.acceptPolicy();
         await YouTubePage.navigateToYouTubeMusic();
 
-        const currentUrl = await browser.getUrl();
-        expect(currentUrl).toContain('music.youtube.com');
+        expect(await YouTubePage.isYouTubeMusicLogoDisplayed()).toBe(true);
     });
 
 
