@@ -1,7 +1,0 @@
-exports.mochaGlobalSetup = function() {
-    console.log('global hook');
-<<<<<<< HEAD
-};
-=======
-};
->>>>>>> 0ea5e842788f5ef527a61981b2e961958b22444e
