@@ -11,4 +11,8 @@ export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> 0ea5e842788f5ef527a61981b2e961958b22444e
