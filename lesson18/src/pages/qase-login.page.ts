@@ -82,7 +82,7 @@ export class LoginPage {
         await expect(this.successMessage).toHaveText(successText);
     }
 
-    public async userNotFoundMessage(notFoundMessage: string) {
+    public async expectNotFoundMessage(notFoundMessage: string) {
         await expect(this.userNotFoundPopup).toHaveText(notFoundMessage);
     }
 }

@@ -34,7 +34,7 @@ test.describe('Тести логіну', () => {
     test('Відновлення пароля з незареєстрованим юзером', async () => {
         await loginPage.clickForgotPassword();
         await loginPage.resetPassword('jshea@ingo.me');
-        await loginPage.expectSuccessMessage('User not found.');
+        await loginPage.expectNotFoundMessage('User not found.');
     });
 
     test('Помилка при відновленні пароля без введеного email', async () => {
