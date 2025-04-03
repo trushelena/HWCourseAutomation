@@ -13,7 +13,11 @@
       "DOM"
     ],                                            /* Specify library files to be included in the compilation. */
     "module": "CommonJS",                         /* Specify what module code is generated. */
+<<<<<<<< HEAD:lesson17/tsconfig.json
+    "rootDir": "./",                             /* Specify the root directory of input files. */
+========
     "rootDir": "./",                              /* Specify the root directory of input files. */
+>>>>>>>> main:lesson18/tsconfig.json
     "resolveJsonModule": true,                    /* Include modules imported with .json extension. */
     "allowJs": true,                              /* Allow JavaScript files to be compiled. */
     "outDir": "build",                            /* Redirect output structure to the directory. */
