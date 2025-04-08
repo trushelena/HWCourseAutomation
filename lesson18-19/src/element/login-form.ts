@@ -7,7 +7,6 @@ export class LoginFormElements {
     this.page = page;
   }
 
-  // Геттери для елементів
   public get usernameInput(): Locator {
     return this.page.locator('[name="email"]');
   }
@@ -24,7 +23,6 @@ export class LoginFormElements {
     return this.page.locator('.vpRdsE');
   }
 
-  // Методи взаємодії з елементами
   public async fillUsername(username: string): Promise<void> {
     await this.usernameInput.fill(username);
   }
