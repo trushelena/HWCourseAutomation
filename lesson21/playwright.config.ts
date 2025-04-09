@@ -22,7 +22,7 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: 'html',
+    reporter: [['html'],  ['allure-playwright']],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
@@ -35,7 +35,7 @@ export default defineConfig({
         // Artifacts
         screenshot: 'on',
         video: 'on'
-        // storageState: 'browser-context.json'
+        //storageState: 'browser-context.json'
     },
 
     /* Configure projects for major browsers */
@@ -51,7 +51,7 @@ export default defineConfig({
             name: 'qase-test',
             use: {
                 ...devices['Desktop Chrome'],
-                storageState: 'browser-context.json'
+                //storageState: 'browser-context.json'
             },
             testMatch: 'qase/**/*.@(spec|test).?(c|m)[t]s?(x)',
             dependencies: ['qase-login']

@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5782","Відновлення пароля з правильною електронною поштою","qase-test","Wed Apr 09 17:19:40 CEST 2025","passed","Wed Apr 09 17:19:45 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
+"","4331","Помилка при відновленні пароля без введеного email","qase-test","Wed Apr 09 17:19:45 CEST 2025","passed","Wed Apr 09 17:19:50 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
+"","5238","Відновлення пароля з незареєстрованим юзером","qase-test","Wed Apr 09 17:19:45 CEST 2025","passed","Wed Apr 09 17:19:51 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
+"","8427","Успішний вхід","qase-test","Wed Apr 09 17:19:40 CEST 2025","passed","Wed Apr 09 17:19:48 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
+"","4962","Перенаправлення на сторінку відновлення пароля","qase-test","Wed Apr 09 17:19:40 CEST 2025","passed","Wed Apr 09 17:19:45 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
+"","4928","Помилка при порожньому логіні","qase-test","Wed Apr 09 17:19:40 CEST 2025","passed","Wed Apr 09 17:19:45 CEST 2025","Тести логіну","qase/qase-test-logon.spec.ts","",""
