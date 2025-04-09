@@ -1,0 +1,39 @@
+2025-04-09 13:27:56 - [32minfo[39m: Creating configuration file...
+2025-04-09 13:27:56 - [32minfo[39m: Adding new script(s) in package.json...
+2025-04-09 13:27:56 - [32minfo[39m: Setup completed
+2025-04-09 13:36:09 - [32minfo[39m: Running SDK with args /usr/local/bin/node /Users/olenapopova/Documents/HWCourseAutomation/lesson21/node_modules/.bin/browserstack-node-sdk playwright test
+2025-04-09 13:36:09 - [32minfo[39m: Reading configs from /Users/olenapopova/Documents/HWCourseAutomation/lesson21/browserstack.yml
+2025-04-09 13:36:09 - [32minfo[39m: SDK run started with id: 5f9930cf-a952-424a-8f8d-bb97157d4c76
+2025-04-09 13:36:10 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+2025-04-09 13:36:25 - [32minfo[39m: Local binary started successfully
+2025-04-09 13:36:28 - [32minfo[39m: Testhub started with id: lehwlit7x5j2pd65pute74nax3g80baezwklxybe
+2025-04-09 13:36:30 - [32minfo[39m: Visit https://observability.browserstack.com/builds/lehwlit7x5j2pd65pute74nax3g80baezwklxybe to view build report, insights, and many more debugging information all at one place!
+
+2025-04-09 13:36:31 - [32minfo[39m: SDK run ended for id: 5f9930cf-a952-424a-8f8d-bb97157d4c76, testhub id: lehwlit7x5j2pd65pute74nax3g80baezwklxybe
+2025-04-09 13:36:32 - [32minfo[39m: Deleting /Users/olenapopova/Documents/HWCourseAutomation/lesson21/playwright-browserstack-sdk.config.ts
+2025-04-09 13:36:34 - [32minfo[39m: Local binary stopped
+2025-04-09 13:38:15 - [32minfo[39m: Running SDK with args /usr/local/bin/node /Users/olenapopova/Documents/HWCourseAutomation/lesson21/node_modules/.bin/browserstack-node-sdk playwright test
+2025-04-09 13:38:15 - [32minfo[39m: Reading configs from /Users/olenapopova/Documents/HWCourseAutomation/lesson21/browserstack.yml
+2025-04-09 13:38:15 - [32minfo[39m: SDK run started with id: 58458080-9c6c-451e-8bf8-62dce4311c93
+2025-04-09 13:38:15 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+2025-04-09 13:38:23 - [32minfo[39m: Local binary started successfully
+2025-04-09 13:38:25 - [32minfo[39m: Testhub started with id: 6vb3jhs6tq0nfnsi2of7r1sr8b7h6y2elyjir0xa
+2025-04-09 13:46:25 - [32minfo[39m: Shutdown triggered by SIGINT
+2025-04-09 13:46:25 - [32minfo[39m: Visit https://observability.browserstack.com/builds/6vb3jhs6tq0nfnsi2of7r1sr8b7h6y2elyjir0xa to view build report, insights, and many more debugging information all at one place!
+
+2025-04-09 13:46:25 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/66a6af646192c4b4f92740c91ee2bf9062b7bf14
+2025-04-09 13:46:26 - [32minfo[39m: SDK run ended for id: 58458080-9c6c-451e-8bf8-62dce4311c93, testhub id: 6vb3jhs6tq0nfnsi2of7r1sr8b7h6y2elyjir0xa
+2025-04-09 13:46:27 - [32minfo[39m: Deleting /Users/olenapopova/Documents/HWCourseAutomation/lesson21/playwright-browserstack-sdk.config.ts
+2025-04-09 13:46:30 - [32minfo[39m: Local binary stopped
+2025-04-09 13:52:29 - [32minfo[39m: Running SDK with args /usr/local/bin/node /Users/olenapopova/Documents/HWCourseAutomation/lesson21/node_modules/.bin/browserstack-node-sdk playwright test
+2025-04-09 13:52:29 - [32minfo[39m: Reading configs from /Users/olenapopova/Documents/HWCourseAutomation/lesson21/browserstack.yml
+2025-04-09 13:52:29 - [32minfo[39m: SDK run started with id: 69506b07-5908-42a7-92ea-e83209cea207
+2025-04-09 13:52:29 - [32minfo[39m: Project and debug logs are captured by default. To disable, set disableAutoCaptureLogs: true in config.
+2025-04-09 13:52:38 - [32minfo[39m: Local binary started successfully
+2025-04-09 13:52:40 - [32minfo[39m: Testhub started with id: z4nspc6fsgarnnpv3so4axio7bkwgyb2red9duhi
+2025-04-09 13:53:54 - [32minfo[39m: Visit https://observability.browserstack.com/builds/z4nspc6fsgarnnpv3so4axio7bkwgyb2red9duhi to view build report, insights, and many more debugging information all at one place!
+
+2025-04-09 13:53:54 - [32minfo[39m: View build on BrowserStack dashboard: https://automate.browserstack.com/dashboard/v2/builds/0ca65dcaeb558829b1930dea65d1da2dd1fdd46d
+2025-04-09 13:53:54 - [32minfo[39m: SDK run ended for id: 69506b07-5908-42a7-92ea-e83209cea207, testhub id: z4nspc6fsgarnnpv3so4axio7bkwgyb2red9duhi
+2025-04-09 13:53:56 - [32minfo[39m: Deleting /Users/olenapopova/Documents/HWCourseAutomation/lesson21/playwright-browserstack-sdk.config.ts
+2025-04-09 13:53:59 - [32minfo[39m: Local binary stopped
