@@ -1,6 +1,6 @@
 import { IWorldOptions, setWorldConstructor, World, Before } from '@cucumber/cucumber';
 import { BrowserContext, Page, chromium } from 'playwright';
-import { LoginPage } from '../pages/login-page';
+import { LoginPage } from '../pages/login-page.ts';
 
  export class RobotDreamsWorld extends World {
      public context!: BrowserContext;

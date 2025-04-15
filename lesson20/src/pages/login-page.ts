@@ -56,10 +56,11 @@ export class LoginPage {
         await this.usernameInput.waitFor({ state: 'visible' });
     }
 
-    public async login(username: string, password: string) {
+    public async login(username: string, password: string): Promise<void> {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
+        await this.page.waitForNavigation({ waitUntil: 'domcontentloaded' });
     }
 
     public async expectErrorMessage(errorText: string) {
