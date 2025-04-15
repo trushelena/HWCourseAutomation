@@ -6,5 +6,6 @@ playwright-report/
 blob-report/
 playwright/.cache/
 browser-context.json
-playwright/allure-report/
+playwright/allure-report
 playwright/allure-results/
+playwright/allure-report/
