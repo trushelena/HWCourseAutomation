@@ -1,10 +1,2 @@
-# Playwright
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-browser-context.json
-/playwright/allure-report
-/playwright/log
-/allure-results
+mocha-sinon/mochawesome-report

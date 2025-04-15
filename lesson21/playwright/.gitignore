@@ -8,4 +8,6 @@ playwright/.cache/
 browser-context.json
 /allure-report
 /allure-results/
-playwright/allure-report/
+/playwright/allure-report/
+/playwright/log
+log/
