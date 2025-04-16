@@ -1,0 +1,12 @@
+
+/playwright/allure-report/
+/playwright/allure-results/
+/playwright/log/
+/playwright/tests-examples/
+/playwright/.obs_test_details*/
+/mocha-sinon/mochawesome-report
+/mocha-sinon/mochawesome-report/
+/mocha-sinon/mocha-sinon-report/
+/mocha-sinon/tests-examples/
+/mocha-sinon/log/
+/mocha-sinon/node_modules/
