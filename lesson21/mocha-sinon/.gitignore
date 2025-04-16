@@ -1,0 +1,6 @@
+node_modules/
+mocha-sinon/mochawesome-report/
+mocha-sinon/mocha-sinon-report/
+mocha-sinon/tests-examples/
+mocha-sinon/log/
+mocha-sinon/node_modules/
