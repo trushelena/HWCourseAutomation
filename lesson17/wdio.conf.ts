@@ -126,7 +126,11 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: ['spec', ['allure', {
+        outputDir: './allure-results',  // Директорія для збереження результатів
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false
+    }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -190,7 +194,7 @@ export const config: WebdriverIO.Config = {
     /* eslint-disable */
     before: function (capabilities, specs, browser) {
         setOptions({ wait: 10000 });
-    }
+    },
     /* eslint-enable */
     /**
      * Runs before a WebdriverIO command gets executed.
