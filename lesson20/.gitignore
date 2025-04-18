@@ -1,0 +1,7 @@
+node_modules/
+reports/
+videos/
+.vscode/
+browser-context.json
+.env
+config.json
