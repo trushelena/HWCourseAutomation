@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<testsuite name="Cucumber" time="13.986" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-04-15T14:12:55.385Z">
+  <testcase classname="Jira Cucumber.js Autotests" name="User is able to open Jira web-site" time="4.145">
+    <failure type="Error" message="locator.fill: value: expected string, got undefined"><![CDATA[    at AtlassianLoginPage.<anonymous> (/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/pages/atlassian-login.page.ts:55:35)
+    at fulfilled (/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/pages/atlassian-login.page.ts:4:58)]]></failure>
+    <system-out><![CDATA[Given the user is authenticated.............................................failed
+When the user navigates to the Jira homepage................................skipped
+Then the user is able to see its base content...............................skipped
+And the user No 5 is able to see its base content with 'image2.jpg' table...skipped]]></system-out>
+  </testcase>
+</testsuite>

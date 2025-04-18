@@ -1,0 +1,126 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "jira-cucumber.js-autotests;user-is-able-to-open-jira-web-site",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "User is able to open Jira web-site",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 467016832
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 433256041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is authenticated",
+            "match": {
+              "location": "file:/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/steps/atlassian-login.steps.ts:12"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3186296458,
+              "error_message": "locator.fill: value: expected string, got undefined\n    at AtlassianLoginPage.<anonymous> (/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/pages/atlassian-login.page.ts:55:35)\n    at fulfilled (/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/pages/atlassian-login.page.ts:4:58)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "the user navigates to the Jira homepage",
+            "match": {
+              "location": "file:/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/steps/jira.steps.ts:13"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the user is able to see its base content",
+            "match": {
+              "location": "file:/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/steps/jira.steps.ts:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "column1",
+                      "column2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "value1",
+                      "value2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the user No 5 is able to see its base content with 'image2.jpg' table",
+            "match": {
+              "location": "file:/Users/olenapopova/Documents/HWCourseAutomation/lesson20-cucumber.js/src/steps/jira.steps.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 8748291
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 45733041
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "jira-cucumber.js-autotests",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Jira Cucumber.js Autotests",
+    "tags": [],
+    "uri": "features/jira.feature"
+  }
+]
