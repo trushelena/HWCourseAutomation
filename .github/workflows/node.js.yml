@@ -11,8 +11,9 @@ on:
 
 jobs:
   build:
-env:
-      BUILD_FOLDER: ./lesson18-19-playwright-test
+
+    env:
+      BUILD_FOLDER: ./lesson18-19
       HEADLESS: true
 
     runs-on: ubuntu-latest
