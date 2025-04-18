@@ -13,7 +13,7 @@ jobs:
   build:
 
     env:
-      BUILD_FOLDER: ./lesson18-19
+      BUILD_FOLDER: ./lesson20/playwright
       HEADLESS: true
 
     runs-on: ubuntu-latest
