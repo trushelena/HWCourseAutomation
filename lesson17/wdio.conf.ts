@@ -53,10 +53,19 @@ export const config: WebdriverIO.Config = {
     //
     capabilities: [
         {
-            browserName: 'chrome'
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: [
+                    '--headless', // Запускати в headless-режимі
+                    '--disable-gpu',
+                    '--no-sandbox',
+                    '--disable-software-rasterizer',
+                    '--user-data-dir=/tmp/chrome-user-data-dir',  // Вказати унікальну директорію профілю
+                ]
+            }
         }
     ],
-
+    
     //
     // ===================
     // Test Configurations
