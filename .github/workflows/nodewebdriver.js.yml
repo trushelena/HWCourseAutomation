@@ -40,13 +40,6 @@ jobs:
     - name: run WebDriverIO tests
       run: npx wdio run wdio.conf.js
       working-directory: ${{ env.BUILD_FOLDER }}
-    - name: upload WebDriverIO report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: wdio-report
-        path: ${{ env.BUILD_FOLDER }}/wdio-report
-        retention-days: 30
     - name: build allure report
       run: npx allure generate allure-results --clean --single-file -o allure-report
       working-directory: ${{ env.BUILD_FOLDER }}
