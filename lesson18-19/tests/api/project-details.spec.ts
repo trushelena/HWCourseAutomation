@@ -1,17 +1,11 @@
-
-<<<<<<< HEAD
-import { describe, it } from 'mocha';
-=======
->>>>>>> main
+import { expect } from 'chai';
 import { fetchProjectDetails } from '../../src/services/project-service';
 import { ProjectResponse } from '../../src/dtos/project.dto';
 import { removeProject } from '../../src/services/delete-project-service';
 import { ProjectDeleteResponse } from '../../src/dtos/delete-project.dto';
-import { expect } from 'chai';
-
 
 describe('Qase API - Fetch and Delete Project', function () {
-    const projectCode = 'TP123';
+    const projectCode = 'TP123'; // Replace with the project code you want to test
 
     it('should fetch the project details successfully', async function () {
         const projectData: ProjectResponse = await fetchProjectDetails();
@@ -32,7 +26,6 @@ describe('Qase API - Fetch and Delete Project', function () {
     it('should delete the project successfully', async function () {
         const deleteResponse: ProjectDeleteResponse = await removeProject(projectCode);
 
-        // Verify that the delete response status is true
         expect(deleteResponse.status).to.equal(true);
     });
 });
