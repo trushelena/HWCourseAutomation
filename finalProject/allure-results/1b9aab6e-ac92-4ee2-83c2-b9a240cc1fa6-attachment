@@ -1,0 +1,81 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Qase user flow: login, create project, open Apps >> Create a new project
+- Location: /Users/olenapopova/Documents/HWCourseAutomation/finalProject/tests/ui/qase-test-logon.spec.ts:24:9
+
+# Error details
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://app.qase.io/login", waiting until "load"
+
+    at LoginPage.goto (/Users/olenapopova/Documents/HWCourseAutomation/finalProject/src/pages/qase-login.page.ts:14:25)
+    at /Users/olenapopova/Documents/HWCourseAutomation/finalProject/tests/ui/qase-test-logon.spec.ts:15:25
+```
+
+# Page snapshot
+
+```yaml
+- heading "Log in to your account" [level=1]
+- textbox "Work email"
+- textbox "Password"
+- button "Show password"
+- link "Forgot password?"
+- checkbox "Remember me" [checked]
+- text: Remember me
+- button "Sign in"
+- text: OR
+- link "Continue with Google":
+  - img
+  - text: Continue with Google
+- link "Continue with SSO"
+- paragraph:
+  - text: Don't have an account?
+  - link "Create an account"
+```
+
+# Test source
+
+```ts
+   1 | import { Locator, Page } from '@playwright/test';
+   2 | import { LoginFormElement } from '../element/login-form';
+   3 |
+   4 | export class LoginPage {
+   5 |
+   6 |     private readonly form: LoginFormElement;
+   7 |
+   8 |     public constructor(private readonly page: Page)  {
+   9 |         this.page = page;
+  10 |         this.form = new LoginFormElement(page);
+  11 |     }
+  12 |
+  13 |     public async goto(): Promise<void> {
+> 14 |         await this.page.goto('https://app.qase.io/login');
+     |                         ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  15 |         await this.page.waitForLoadState('domcontentloaded');
+  16 |         await this.form.usernameInput.waitFor({ state: 'visible' });
+  17 |     }
+  18 |
+  19 |     public async login(username: string, password: string): Promise<void>  {
+  20 |         await this.form.fillUsername(username);
+  21 |         await this.form.fillPassword(password);
+  22 |         await this.form.clickLoginButton();
+  23 |     }
+  24 |
+  25 |     public async waitForUserAvatar(): Promise<void>  {
+  26 |         await this.form.waitForUserAvatar();
+  27 |     }
+  28 |
+  29 |     public get userAvatar(): Locator{
+  30 |         return this.form.userAvatar;
+  31 |     }
+  32 | }
+  33 |
+```
