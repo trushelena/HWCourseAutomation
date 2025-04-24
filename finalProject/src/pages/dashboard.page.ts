@@ -28,4 +28,8 @@ export class DashboardPage extends BasePage {
     public async isProjectTitleVisible(): Promise<boolean> {
         return this.elements.isProjectTitleVisible();
     }
+
+    public async getProjectTitleText(): Promise<string> {
+        return this.elements.getProjectTitleText();
+    }
 }

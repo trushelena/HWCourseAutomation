@@ -25,7 +25,7 @@ export class DashboardElement {
     }
 
     private get projectTitle(): Locator {
-        return this.page.locator('h1');
+        return this.page.locator('.E5RRRH');
     }
 
 
@@ -56,4 +56,10 @@ export class DashboardElement {
     public async isProjectTitleVisible(): Promise<boolean> {
         return this.projectTitle.isVisible();
     }
+
+    public async getProjectTitleText(): Promise<string> {
+        const title = await this.projectTitle.textContent();
+        return title?.trim() || '';
+    }
 }
+

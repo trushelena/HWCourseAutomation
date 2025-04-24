@@ -4,6 +4,8 @@ module.exports = {
     extension: ['ts'],
     spec: 'tests/api/**/*.spec.ts',
     reporter: 'allure-mocha',
-    reporterOptions: ['resultsDir=allure-results']
+    reporterOptions: {
+      resultsDir: 'allure-results',  // Вказуємо директорію для зберігання результатів
+    },
   };
   

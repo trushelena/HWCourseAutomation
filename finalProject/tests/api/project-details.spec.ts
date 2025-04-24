@@ -1,5 +1,3 @@
-
-import { describe, it } from 'mocha';
 import { fetchProjectDetails } from '../../src/services/project-service';
 import { ProjectResponse } from '../../src/dtos/project.dto';
 import { removeProject } from '../../src/services/delete-project-service';

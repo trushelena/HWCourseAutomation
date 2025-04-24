@@ -32,8 +32,9 @@ test.describe('Qase user flow: login, create project, open Apps', () => {
         await dashboardPage.createNewProject(name, code, description);
         await dashboardPage.waitForProjectTitle();
 
-        const isVisible = await dashboardPage.isProjectTitleVisible();
-        expect(isVisible).toBeTruthy();
+        const projectTitle = await dashboardPage.getProjectTitleText();
+        expect(projectTitle).toBe(name);
+
     });
 
     test('Navigate to Apps tab', async () => {
