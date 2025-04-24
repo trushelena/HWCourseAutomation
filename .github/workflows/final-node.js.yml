@@ -39,6 +39,9 @@ jobs:
     - name: run playwright tests
       run: npm run test
       working-directory: ${{ env.BUILD_FOLDER }}
+    - name: Run API tests (Mocha)
+      run: npm run test:api
+      working-directory: ${{ env.BUILD_FOLDER }}
     - name: upload playwright report
       uses: actions/upload-artifact@v4
       if: always()
